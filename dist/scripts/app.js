@@ -7,15 +7,15 @@
         });
         
         $stateProvider
-            .state('state3', {
-                url: '/collection',
-                controller: 'CollectionCtrl as collection',
-                templateUrl: '/templates/collection.html'
+            .state('home', {
+                url: '/',
+                controller: 'HomeCtrl as home',
+                templateUrl: '/templates/home.html'
             });  
     }
     
     angular
-        .module('bloctime', ['firebase', 'ui.router'])
+        .module('blocChat', ['firebase', 'ui.router', 'ui.bootstrap'])
         .config(config);
 })();
 
