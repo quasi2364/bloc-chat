@@ -1,9 +1,16 @@
-/*.modal-open {
-	display: block;
-	background-color: orange;
+.rooms {
+	padding: 50px;
 }
 
-.modal {
-	display: block;
-	background-color: grey;
+/*.rooms .chat-rooms-header {
+	border: 1px solid grey;
+}
+
+.rooms .add-room-btn {
+	border: 1px solid grey;
+}
+
+.rooms .chat-rooms-title {
+	border: 1px solid grey;
+	width: 
 }*/

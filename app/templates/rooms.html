@@ -1,12 +1,9 @@
-<section class="rooms" ng-controller="RoomsCtrl as rooms">
-	<button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
-
-	<div class="container">
-		<h2>Chat Rooms</h2>
-		<form ng-submit="rooms.addRoom(newRoom)">
-			<input ng-model="newRoom"/>
-			<button type="submit">Add Room</button>
-		</form>
+<section class="rooms" ng-controller="RoomsCtrl">
+		<div class="chat-rooms-header">
+			<h2 class="chat-rooms-title">Chat Rooms</h2>
+			<button type="button" class="btn btn-default add-room-btn" ng-click="open()">+</button>
+		</div>
+		</br>
 		<table ng-repeat="room in rooms.all">
 			<tr>
 				<td>
@@ -17,5 +14,4 @@
 				</td>
 			</tr>
 		</table>
-	</div>
 </section>

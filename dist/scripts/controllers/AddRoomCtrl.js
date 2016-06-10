@@ -1,16 +1,17 @@
 (function() {
-	function AddRoomCtrl (Rooms, $scope, $uibModal) {
-		// $scope.open = function() {
-		// 	console.log('open');
+	function AddRoomCtrl (Rooms, $scope, $uibModalInstance) {
+		
+		$scope.add = function(newRoom) {
+			Rooms.all.$add(newRoom);
+			$uibModalInstance.close();
+		};
 
-		// 	var modalInstance = $uibModal.open({
-		// 		animation: $scope.animationsEnabled,
-		// 		templateUrl: 'addRoom.html'
-		// 	});
-		// };
+		$scope.close = function() {
+			$uibModalInstance.close();	
+		};
 	}
 
 	angular
 		.module('blocChat')
-		.controller('AddRoomCtrl', ['Rooms', '$scope', '$uibModal', AddRoomCtrl]);
+		.controller('AddRoomCtrl', ['Rooms', '$scope', '$uibModalInstance', AddRoomCtrl]);
 })(); 
