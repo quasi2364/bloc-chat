@@ -1,6 +1,7 @@
 <main class="container" ng-controller="RoomsCtrl">
 	<div class="row">
-		<section class="rooms col-md-4">
+		<!-- Block with chat rooms header and list of chat rooms -->
+		<section class="rooms col-md-4"> 
 				<table class="rooms-header-table">
 					<row class="rooms-header-row">
 						<td class="rooms-header-text">Chat Rooms</td>
@@ -20,17 +21,25 @@
 				</table>
 		</section>
 
+		<!-- Block with list of messages and send message bar -->
 		<section class="messages col-md-8">
 			<h2>Messages</h2>
-			<div class="messages-list" ng-repeat="message in rooms.messages">				
-				<div class="row message-row" ng-class-odd="'odd'" ng-class-even="'even'">
-					<div class="user-message col-md-11">
-						<p class="username-text">{{message.username}}</p>
-						<p class="content-text">{{message.content}}</p>
-					</div>
-					<div class="timestamp col-md-1">{{message.sentAt}}</div>
-				</div>	
-			</div>
+			<div class="messages-list">	
+				<div ng-repeat="message in rooms.messages">
+					<div class="row message-row" ng-class-odd="'odd'" ng-class-even="'even'">
+						<div class="user-message col-md-11">
+							<p class="username-text">{{message.username}}</p>
+							<p class="content-text">{{message.content}}</p>
+						</div>
+						<div class="timestamp col-md-1">{{message.sentAt | date : 'shortTime'}}</div>
+					</div>	
+				</div>
+
+				<div class="msg-send-bar row">
+					<input class="msg-input col-md-9" ng-model="newMessage">
+					<button type="button" class="btn btn-default send-msg-btn col-md-2" ng-click="message.send(newMessage)">Send</button>
+				</div>
+			</div>			
 		</section>
 	</div>
 </main>
