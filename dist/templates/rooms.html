@@ -1,17 +1,36 @@
-<section class="rooms" ng-controller="RoomsCtrl">
-		<div class="chat-rooms-header">
-			<h2 class="chat-rooms-title">Chat Rooms</h2>
-			<button type="button" class="btn btn-default add-room-btn" ng-click="open()">+</button>
-		</div>
-		</br>
-		<table ng-repeat="room in rooms.all">
-			<tr>
-				<td>
-					<p>{{room.$value}}</p>
-				</td>
-				<td>
-					<button ng-click="rooms.all.$remove(room)"> X </button>
-				</td>
-			</tr>
-		</table>
-</section>
+<main class="container" ng-controller="RoomsCtrl">
+	<div class="row">
+		<section class="rooms col-md-4">
+				<table class="rooms-header-table">
+					<row class="rooms-header-row">
+						<td class="rooms-header-text">Chat Rooms</td>
+						<td class="add-room-btn-cell">
+							<button type="button" class="btn btn-default add-room-btn" ng-click="open()">New Room</button>
+						</td>		
+					</row>
+				</table>
+				
+				<table class="room-list" ng-repeat="room in rooms.all">
+					<tr class="rooms-row" ng-click="function()">
+						<td class="room-text">{{room.$value}}</td>
+						<td>
+							<button class="delete-room-btn" ng-click="rooms.all.$remove(room)"> X </button>
+						</td>
+					</tr>
+				</table>
+		</section>
+
+		<section class="messages col-md-8">
+			<h2>Messages</h2>
+			<div class="messages-list" ng-repeat="message in rooms.messages">				
+				<div class="row message-row" ng-class-odd="'odd'" ng-class-even="'even'">
+					<div class="user-message col-md-11">
+						<p class="username-text">{{message.username}}</p>
+						<p class="content-text">{{message.content}}</p>
+					</div>
+					<div class="timestamp col-md-1">{{message.sentAt}}</div>
+				</div>	
+			</div>
+		</section>
+	</div>
+</main>

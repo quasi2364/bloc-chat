@@ -1,16 +1,97 @@
+.container {
+	font-family: 'Lucida Grande';
+}
+
+/*-------ROOMS-------------------*/
+
 .rooms {
-	padding: 50px;
+	/*width: 30%;*/
+	background-color: #eeeeee;
+	height: 100vh;
 }
 
-/*.rooms .chat-rooms-header {
-	border: 1px solid grey;
+.room-list {
+/*	border: 1px solid grey;*/
+	width: 100%;
 }
 
-.rooms .add-room-btn {
-	border: 1px solid grey;
+.rooms-row {
+	height: 50px;
+	border: 1px solid #d6d6d6;
+	width: 100%;
+	text-align: left;
+	vertical-align: center;
+	cursor: pointer;
 }
 
-.rooms .chat-rooms-title {
-	border: 1px solid grey;
-	width: 
-}*/
+.rooms-row:hover {
+	background-color: #d6d6d6;
+}
+
+.delete-room-btn {
+	float: right;
+	margin-right: 20px;
+	font-size: 10px;
+	vertical-align: center;
+}
+
+.room-text {
+	padding-left: 50px;
+	font-size: 16px;
+/*	border: 1px solid black;*/
+}
+.rooms-header-table {
+	height: 100px;
+	width: 100%;
+}
+
+.rooms-header-text {
+	font-size: 28px;
+	padding-left: 50px
+}
+
+.add-room-btn {
+	float: right;
+	margin-right: 20px;
+}
+
+/*-------MESSAGES-------------------*/
+
+.messages {
+
+}
+
+.odd {
+	background-color: #fafafa;
+}
+
+.even {
+	background-color: #effeff;
+}
+
+.message-row {
+/*	height: 100px;*/
+	padding: 5px;
+	vertical-align: center;
+	border-radius: 20px;
+	margin: 13px;
+
+}
+
+.messages-list {
+	margin-left: 30px;
+}
+
+.timestamp {
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+.username-text {
+	margin: 0px;
+	font-weight: bold;
+}
+
+.content-text {
+	margin: 0px;
+}
